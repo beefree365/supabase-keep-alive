@@ -19,4 +19,4 @@ jobs:
           echo "Pinging Supabase..."
           curl -s -X GET "${SUPABASE_URL}/rest/v1/${SUPABASE_TABLE}?select=id&limit=1" \
             -H "apikey: $SUPABASE_ANON_KEY" \
-            -H "Authorization: Bearer $SUPABASE_ANON_KEY"
+            -H "Authorization: Bearer $SUPABASE_ANON_KEY" || exit 1
