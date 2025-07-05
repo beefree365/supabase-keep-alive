@@ -2,7 +2,7 @@ name: Supabase Keep Alive (Test)
 
 on:
   schedule:
-    - cron: '*/5 * * * *'  # 每1分钟执行一次（用于测试）
+    - cron: '*/50 * * * *'  # 每1分钟执行一次（用于测试）
   workflow_dispatch:       # 支持手动触发
 
 jobs:
