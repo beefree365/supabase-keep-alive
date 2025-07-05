@@ -17,6 +17,6 @@ jobs:
           SUPABASE_TABLE: ${{ secrets.SUPABASE_TABLE }}
         run: |
           echo "Pinging Supabase..."
-          curl -s -X GET "${SUPABASE_URL}/rest/v1/${SUPABASE_TABLE}?select=id&limit=1" \
+          curl -s -X GET "${SUPABASE_URL}/rest/v1/${SUPABASE_TABLE}?limit=5" \
             -H "apikey: $SUPABASE_ANON_KEY" \
             -H "Authorization: Bearer $SUPABASE_ANON_KEY" || exit 1
