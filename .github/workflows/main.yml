@@ -2,7 +2,7 @@ name: Supabase Keep Alive (Test)
 
 on:
   schedule:
-    - cron: '*/50 * * * *'  # 每1分钟执行一次（用于测试）
+    - cron: '0 0 * * *'  # 每天0点执行一次
   workflow_dispatch:       # 支持手动触发
 
 jobs:
@@ -19,4 +19,4 @@ jobs:
           echo "Pinging Supabase..."
           curl -s -X GET "${SUPABASE_URL}/rest/v1/${SUPABASE_TABLE}?limit=5" \
             -H "apikey: $SUPABASE_ANON_KEY" \
-            -H "Authorization: Bearer $SUPABASE_ANON_KEY" || exit 1
+            -H "Authorization: Bearer $SUPABASE_ANON_KEY"
